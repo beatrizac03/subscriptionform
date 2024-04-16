@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --base-size: 1.2rem;
+    --scale: 1.25;
+    --xxl: calc(var(--xl) * var(--scale));
+    --xl: calc(var(--large) * var(--scale));
+    --large: calc(var(--medium) * var(--scale));
+    --medium: calc(var(--regular) * var(--scale));
+    --regular: calc(var(--small) * var(--scale));
+    --small: calc(var(--smallest) * var(--scale));
+    --smallest: calc((var(--base-size)) / (var(--scale)));
+}
