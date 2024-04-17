@@ -5,6 +5,13 @@
 }
 
 :root {
+    --black-primary: #121214;
+    --black-sec: #232325;
+    --grey: #919198;
+    --white: #ECECEC;
+    --orange: #EF8C54;
+    --green: #659A80;
+
     --base-size: 1.2rem;
     --scale: 1.25;
     --xxl: calc(var(--xl) * var(--scale));
@@ -14,4 +21,90 @@
     --regular: calc(var(--small) * var(--scale));
     --small: calc(var(--smallest) * var(--scale));
     --smallest: calc((var(--base-size)) / (var(--scale)));
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    /* background-color: var(--black-primary);
+    color: var(--white); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto';
+}
+
+.container-all {
+    width: 80%;
+    height: 90%;
+    border: 1px solid brown;
+}
+
+/*  header */
+
+.div-header {
+    height: 8%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+}
+
+.div-header i {
+    background-color: var(--orange);
+    border-radius: 2px;
+    font-size: var(--medium);
+}
+
+/*  formulario de inscrição */
+
+.subscription-cont {
+    border-top: 1px solid var(--grey);
+    border-bottom: 1px solid var(--grey);
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.maintext-subsc {
+    width: 100%;
+    border: 1px solid red;
+    font-size: var(--large);
+}
+
+.data-subscription {
+    width: 100%;
+    height: 55%;
+    border: 1px solid blue;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.input-datasubsc {
+    width: 35%;
+    height: 70%;
+    border-radius: 10px;
+    border: 1px solid var(--grey);
+    background-color: var(--black-sec);
+    box-shadow: 0px 0px 5px 2px var(--grey);
+    padding: 1rem;
+    color: var(--white);
+}
+
+.sendsubscription {
+    height: 70%;
+    background-color: var(--orange);
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    padding: 0 0.5rem;
+}
+
+
+/*  tabela */
+
+table.table-participants {
+    border: 1px solid var(--grey);
+    width: 80%;
 }
