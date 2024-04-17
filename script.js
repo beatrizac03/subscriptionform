@@ -23,6 +23,7 @@ function sendSubscription() {
 console.log(participants)
 
 function registerIntoTable() {
+
     let eachParticipantRow = document.createElement('tr')
     eachParticipantRow.style.width = '100%'
     eachParticipantRow.style.border = '1px solid brown'

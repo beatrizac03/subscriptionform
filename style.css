@@ -108,3 +108,10 @@ table.table-participants {
     border: 1px solid var(--grey);
     width: 80%;
 }
+
+tbody {
+    border: 1px solid var(--black-sec);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
