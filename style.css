@@ -104,6 +104,15 @@ body {
 
 /*  tabela */
 
+.cont-tablesubscriptions {
+    margin-top: 1rem
+}
+
+.cont-tablesubscriptions p {
+    font-size: var(--medium);
+    font-weight: 800;
+}
+
 table.table-participants {
     border: 1px solid var(--grey);
     width: 80%;

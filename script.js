@@ -2,7 +2,10 @@ let inputName = document.querySelector('#input-name')
 let inputEmail = document.querySelector('#input-email')
 let btnSendSubscription = document.querySelector('.sendsubscription')
 
-let tbodyCont = document.querySelector('.tbody-table')
+let tbodyColumnParticipant = document.querySelector('.tbody-columnparticipant')
+let tbodyColumnSubscDate = document.querySelector('.tbody-columnsubscripdate')
+let tbodyColumnCheckinDate = document.querySelector('.tbody-columncheckindate')
+
 
 let currentIndex = 0
 
@@ -27,10 +30,17 @@ console.log(participants)
 
 function registerIntoTable() {
 
-    let eachParticipantRow = document.createElement('tr')
-    eachParticipantRow.style.width = '100%'
-    eachParticipantRow.style.border = '1px solid brown'
-    eachParticipantRow.style.height = '55px'
+    function applyRowStyle(element) {
+        element.style.width = '100%';
+        element.style.border = '1px solid brown';
+        element.style.height = '55px';
+    }
+
+    let rowParticipantData = document.createElement('tr');
+    applyCommonStyle(rowParticipantData);
+
+    let rowSubscriptionDate = document.createElement('tr');
+    applyCommonStyle(rowSubscriptionDate);
 
     
         let eachParticipantCell = document.createElement('td')
@@ -38,28 +48,23 @@ function registerIntoTable() {
         let eachCheckInDateCell = document.createElement('td')
 
         participants.forEach(participant => {
-            /*eachParticipantCell.textContent = `${participant.name} - ${participant.email}` */
             eachParticipantCell.innerHTML = `
             <div class="cont-row" style="display: flex; flex-direction: column; width: 100%; height: 100%">
                 <div class="p-namecont">${participant.name}</div>
                 <div class="p-emailcont">${participant.email}</div>
             </div>`
 
-            let randomNumb = Math.floor(Math.random() * 60) + 1
-            console.log(randomNumb)
-
-            eachSubscriptionDateCell.innerHTML = `
-            <div class="cont-row" style="display: flex; flex-direction: column; width: 100%; height: 100%">
-                <div class="p-namecont"><span>há ${randomNumb} minutos</span></div>
-            </div>
-                `
+            
         })
-        /*  eachParticipantCell.textContent= `OI`
-        eachParticipantCell.style.width = '100%'
-        eachParticipantCell.style.height = '100%' tabela */
+        //  let randomNumb = Math.floor(Math.random() * 60) + 1
+        //  eachSubscriptionDateCell.innerHTML = `
+         //     <div class="cont-row" style="display: flex; flex-direction: column; width: 100%; height: 100%">
+           //       <div class="p-namecont"><span>há ${randomNumb} minutos</span></div>
+        //      </div>`
    
-    eachParticipantRow.appendChild(eachParticipantCell)
-    eachParticipantRow.appendChild(eachSubscriptionDateCell)
+    rowParticipantData.appendChild(eachParticipantCell)
+    rowParticipantData.appendChild(eachSubscriptionDateCell)
+    // rowParticipantData.appendChild(eachCheckInDateCell)
 
-    tbodyCont.appendChild(eachParticipantRow)
+    tbodyColumnParticipant.appendChild(rowParticipantData)
 }
