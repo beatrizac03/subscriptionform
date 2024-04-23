@@ -13,7 +13,7 @@ Projeto para simular inscrição de participantes em eventos
 - Confirmar check-in
 
 ## Como acessar
-1. Acesso pelo link: 
+1. Acesso pelo link: https://beatrizac03.github.io/subscriptionform/
 2. Clonar este repositório e abrir o arquivo index.html em seu navegador.
 
 ```bash
