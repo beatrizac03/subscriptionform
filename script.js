@@ -2,10 +2,7 @@ let inputName = document.querySelector('#input-name')
 let inputEmail = document.querySelector('#input-email')
 let btnSendSubscription = document.querySelector('.sendsubscription')
 
-let tbodyColumnParticipant = document.querySelector('.tbody-columnparticipant')
-let tbodyColumnSubscDate = document.querySelector('.tbody-columnsubscripdate')
-let tbodyColumnCheckinDate = document.querySelector('.tbody-columncheckindate')
-
+let tbody = document.querySelector('.tbody-participantdata')
 
 let currentIndex = 0
 
@@ -36,12 +33,8 @@ function registerIntoTable() {
         element.style.height = '55px';
     }
 
-    let rowParticipantData = document.createElement('tr');
-    applyCommonStyle(rowParticipantData);
-
-    let rowSubscriptionDate = document.createElement('tr');
-    applyCommonStyle(rowSubscriptionDate);
-
+    let rowParticipant = document.createElement('tr');
+    applyRowStyle(rowParticipant);
     
         let eachParticipantCell = document.createElement('td')
         let eachSubscriptionDateCell = document.createElement('td')
@@ -49,22 +42,38 @@ function registerIntoTable() {
 
         participants.forEach(participant => {
             eachParticipantCell.innerHTML = `
-            <div class="cont-row" style="display: flex; flex-direction: column; width: 100%; height: 100%">
+            <div class="cont-row" style="flex-direction: column; width: 100%; height: 100%">
                 <div class="p-namecont">${participant.name}</div>
                 <div class="p-emailcont">${participant.email}</div>
             </div>`
 
-            
-        })
-        //  let randomNumb = Math.floor(Math.random() * 60) + 1
-        //  eachSubscriptionDateCell.innerHTML = `
-         //     <div class="cont-row" style="display: flex; flex-direction: column; width: 100%; height: 100%">
-           //       <div class="p-namecont"><span>há ${randomNumb} minutos</span></div>
-        //      </div>`
-   
-    rowParticipantData.appendChild(eachParticipantCell)
-    rowParticipantData.appendChild(eachSubscriptionDateCell)
-    // rowParticipantData.appendChild(eachCheckInDateCell)
+            let randomNumb = Math.floor(Math.random() * 60) + 1
+            eachSubscriptionDateCell.innerHTML = `
+            <div class="cont-row" style="flex-direction: column; width: 100%; height: 100%">
+                  <div class="p-namecont"><span>há ${randomNumb} minutos</span></div>
+               </div>`
 
-    tbodyColumnParticipant.appendChild(rowParticipantData)
+            eachCheckInDateCell.innerHTML = `
+            <div class="cont-row" style="flex-direction: column; width: 100%; height: 100%">
+                <div class="p-namecont"><span id="span-checkin">Confirmar check-in</span></div>
+            </div>`
+        })
+
+        
+        
+   
+        rowParticipant.appendChild(eachParticipantCell)
+        rowParticipant.appendChild(eachSubscriptionDateCell)
+        rowParticipant.appendChild(eachCheckInDateCell)
+
+        tbody.appendChild(rowParticipant)
 }
+
+
+/* let spanCheckIn = document.getElementById('span-checkin')
+spanCheckIn.addEventListener('click', confirmCheckIn)
+
+function confirmCheckIn (event){
+    let spanCheckInClicked = event.target
+    console.log(spanCheckInClicked)
+} */

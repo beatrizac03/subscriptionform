@@ -26,18 +26,24 @@
 body {
     width: 100vw;
     height: 100vh;
-    /* background-color: var(--black-primary);
-    color: var(--white); */
+    background-color: var(--black-sec);
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Roboto';
 }
 
+.maintext-subsc, .cont-tablesubscriptions p, thead {
+    color: white;
+}
+
+tbody {
+    color: var(--white);
+}
+
 .container-all {
     width: 80%;
     height: 90%;
-    border: 1px solid brown;
 }
 
 /*  header */
@@ -68,14 +74,12 @@ body {
 
 .maintext-subsc {
     width: 100%;
-    border: 1px solid red;
     font-size: var(--large);
 }
 
 .data-subscription {
     width: 100%;
     height: 55%;
-    border: 1px solid blue;
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -104,8 +108,27 @@ body {
 
 /*  tabela */
 
+thead {
+    border-bottom: 2px solid var(--grey);
+}
+
+th {
+    text-align: left;
+}
+
+th:first-child{
+    width: 50%;
+}
+
+th:nth-child(2), th:nth-child(3) {
+
+}
+
 .cont-tablesubscriptions {
-    margin-top: 1rem
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .cont-tablesubscriptions p {
@@ -116,11 +139,10 @@ body {
 table.table-participants {
     border: 1px solid var(--grey);
     width: 80%;
+    padding: 0.4rem 1rem;
 }
 
 tbody {
     border: 1px solid var(--black-sec);
     width: 100%;
-    display: flex;
-    flex-direction: column;
 }
