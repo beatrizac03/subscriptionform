@@ -133,7 +133,7 @@ th:nth-child(2), th:nth-child(3) {
 
 .cont-tablesubscriptions p {
     font-size: var(--medium);
-    font-weight: 800;
+    font-weight: 600;
 }
 
 table.table-participants {
