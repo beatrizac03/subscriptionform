@@ -55,17 +55,16 @@ function registerIntoTable() {
 
             eachCheckInDateCell.innerHTML = `
             <div class="cont-row" style="flex-direction: column; width: 100%; height: 100%">
-                <div class="p-namecont"><span id="span-checkin" style="color: var(--green); cursor: pointer;">Confirmar check-in</span></div>
+                <div class="p-namecont"><span class="span-checkin" style="color: var(--green); cursor: pointer;">Confirmar check-in</span></div>
             </div>`
+            let spanCheckIn = eachCheckInDateCell.querySelector('.cont-row .p-namecont .span-checkin');
+            spanCheckIn.addEventListener('click', confirmCheckIn) 
+            function confirmCheckIn(event) {
+                let spanClicked = event.target
+                spanClicked.innerHTML = `Confirmado!`
+            }
             
         })
-
-        let spanCheckIn = document.querySelectorAll('#span-checkin')
-            spanCheckIn.forEach( span => {
-                span.addEventListener('click', function() {
-                    console.log('SIM')
-                })
-            })
 
         rowParticipant.appendChild(eachParticipantCell)
         rowParticipant.appendChild(eachSubscriptionDateCell)
@@ -75,7 +74,3 @@ function registerIntoTable() {
 }
 
 
-function confirmCheckIn (event){
-    let spanCheckInClicked = event.target
-    console.log(spanCheckInClicked)
-}

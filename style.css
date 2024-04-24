@@ -94,8 +94,19 @@ tbody {
     border: 1px solid var(--grey);
     background-color: var(--black-sec);
     box-shadow: 0px 0px 6px 1px var(--grey);
-    padding: 1rem;
+    padding: 1rem 2rem;
     color: var(--white);
+}
+#input-name {
+    background-image: url(assets/images/usericon.png);
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+#input-email {
+    background-image: url(assets/images/aticon.png);
+    background-repeat: no-repeat;
+    background-position: left;
 }
 
 .sendsubscription {
